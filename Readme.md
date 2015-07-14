@@ -21,16 +21,18 @@ Successful login (example)
 	"success": true,
 	"shifts": {
 		"2015-05-02": [
-			"time": {
-				"start": "14:00",
-				"end": "22:00"
-			},
-			"location": "Front Gate",
-			"activityCenter": {
-				"number": 1765,
-				"name": "FG Ticket Takers"
-			},
-			"position": "Taker"
+			{
+				"time": {
+					"start": "14:00",
+					"end": "22:00"
+				},
+				"location": "Front Gate",
+				"activityCenter": {
+					"number": 1765,
+					"name": "FG Ticket Takers"
+				},
+				"position": "Taker"
+			}
 		]
     },
     "error": null

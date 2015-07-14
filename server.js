@@ -92,8 +92,8 @@ function logIn(res, id, bd) {
 // Scrape and parse schedule from mypks
 function parseSchedule(res, document) {
 
-	// Create array for entry storage and get raw row data
-	var entries = [];
+	// Create array for shift storage and get raw row data
+	var shifts = [];
 	var rows = document.getElementById('GridView1').tBodies[0].rows;
 
 	// Get raw cell data for each row
@@ -125,8 +125,8 @@ function parseSchedule(res, document) {
 			activityCenter.number = parseInt(rawActivityCenter.substring(0, rawActivityCenter.indexOf('-') - 1));
 			activityCenter.name = rawActivityCenter.substring(rawActivityCenter.indexOf('-') + 1);
 
-			// Add row data to entries
-			entries.push({
+			// Add row data to shifts
+			shifts.push({
 				'date': date,
 				'time': time,
 				'location': location,
@@ -137,16 +137,16 @@ function parseSchedule(res, document) {
 		}
 	}
 
-	// Send parsed and formatted entries
-	sendEntries(res, entries);
+	// Send parsed and formatted shifts
+	sendShifts(res, shifts);
 
 }
 
-// Send success response with entries
-function sendEntries(res, entries) {
+// Send success response with shifts
+function sendShifts(res, shifts) {
 	res.end(JSON.stringify({
 		'success': true,
-		'entries': entries,
+		'shifts': shifts,
 		'error': null
 	}));
 }

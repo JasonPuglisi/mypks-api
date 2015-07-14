@@ -93,7 +93,7 @@ function logIn(res, id, bd) {
 function parseSchedule(res, document) {
 
 	// Create array for shift storage and get raw row data
-	var shifts = [];
+	var shifts = {};
 	var rows = document.getElementById('GridView1').tBodies[0].rows;
 
 	// Get raw cell data for each row
@@ -125,9 +125,12 @@ function parseSchedule(res, document) {
 			activityCenter.number = parseInt(rawActivityCenter.substring(0, rawActivityCenter.indexOf('-') - 1));
 			activityCenter.name = rawActivityCenter.substring(rawActivityCenter.indexOf('-') + 1);
 
+			// Add date to shifts if not present
+			if (!shifts[date])
+				shifts[date] = [];
+
 			// Add row data to shifts
-			shifts.push({
-				'date': date,
+			shifts[date].push({
 				'time': time,
 				'location': location,
 				'activityCenter': activityCenter,

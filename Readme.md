@@ -19,12 +19,11 @@ Successful login (example)
 ```json
 {
 	"success": true,
-	"schedule": [
-		{
-			"date": "Saturday, May 2nd 2015",
+	"shifts": {
+		"2015-05-02": [
 			"time": {
-				"start": "2:00 pm",
-				"end": "10:00 pm"
+				"start": "14:00",
+				"end": "22:00"
 			},
 			"location": "Front Gate",
 			"activityCenter": {
@@ -32,8 +31,8 @@ Successful login (example)
 				"name": "FG Ticket Takers"
 			},
 			"position": "Taker"
-		}
-    ],
+		]
+    },
     "error": null
 }
 ```

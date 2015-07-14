@@ -113,12 +113,12 @@ function parseSchedule(res, document) {
 		if (location !== '&nbsp;') {
 
 			// Format date
-			var date = moment(rawDate.substring(rawDate.indexOf(' ') + 1), 'MM/DD/YYYY').format('dddd, MMMM Do YYYY');
+			var date = moment(rawDate.substring(rawDate.indexOf(' ') + 1), 'MM/DD/YYYY').format('YYYY-MM-DD');
 
 			// Format start and end times
 			var time = {};
-			time.start = moment(rawTime.substring(0, rawTime.indexOf('-') - 1), 'HH:mm').format('h:mm a');
-			time.end = moment(rawTime.substring(rawTime.indexOf('-') + 2), 'HH:mm').format('h:mm a');
+			time.start = rawTime.substring(0, rawTime.indexOf('-') - 1);
+			time.end = rawTime.substring(rawTime.indexOf('-') + 2);
 
 			// Format activity center number and name
 			var activityCenter = {};

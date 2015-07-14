@@ -1,6 +1,6 @@
 {
 	"name": "mypks-api",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "A JSON API for Six Flags scheduling website mypks.",
 	"keywords": ["mypks", "six", "flags", "schedule", "json", "api"],
 	"homepage": "https://github.com/JasonPuglisi/mypks-api",
@@ -19,6 +19,7 @@
 	"dependencies": {
 		"express": "~4.13.1",
 		"moment": "~2.10.3",
+		"validator": "~3.41.2",
 		"zombie": "~2.5.1"
 	},
 	"engines": {

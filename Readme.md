@@ -8,7 +8,7 @@ Send a GET request with parameters `id` (ID number) and `bd` (birthdate in forma
 
 Request example: http://127.0.0.1:8080/?id=00000000&bd=0000
 
-Current official host: [mypks-api.herokuapp.com](https://mypks-api.herokuapp.com/) (Running v0.2.1)
+Current official host: [mypks-api.herokuapp.com](https://mypks-api.herokuapp.com/)
 
 GET is used over POST because it's easier, and because MyPKS login details are non-sensitive and non-changable.
 

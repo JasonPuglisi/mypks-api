@@ -2,6 +2,12 @@
 
 A JSON API for Six Flags scheduling website [MyPKS](http://mypks.com/).
 
+# Warning: This doesn't work anymore
+
+Someone thought it would be a good idea to add ReCAPTCHA to the login page,
+which breaks this completely. Maybe there's some way around it, but this
+project is now defunct unless I have time to look into it more.
+
 ## Usage
 
 Send a GET request with parameters `id` (ID number) and `bd` (birthdate in format `YYMM`).

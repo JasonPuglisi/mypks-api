@@ -1,28 +1,24 @@
 {
-	"name": "mypks-api",
-	"version": "0.3.0",
-	"description": "A JSON API for Six Flags scheduling website mypks.",
-	"keywords": ["mypks", "six", "flags", "schedule", "json", "api"],
-	"homepage": "https://github.com/JasonPuglisi/mypks-api",
-	"bugs": "https://github.com/JasonPuglisi/mypks-api/issues",
-	"license": "MIT",
-	"author": "Jason Puglisi <jason@puglisi.im> (https://www.puglisi.im/)",
-	"files": ["server.js", "app.json", "Procfile", "Readme.md", "License.txt"],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/JasonPuglisi/mypks-api.git"
-	},
-	"main": "--harmony server.js",
-	"scripts": {
-		"start": "node --harmony server.js"
-	},
-	"dependencies": {
-		"express": "~4.13.1",
-		"moment": "~2.10.3",
-		"validator": "~3.41.2",
-		"zombie": "~2.5.1"
-	},
-	"engines": {
-		"node": "~0.12.7"
-	}
+  "name": "mypks-api",
+  "version": "1.0.0",
+  "description": "A JSON API for Six Flags scheduling website MyPKS.",
+  "author": "Jason Puglisi <jason@puglisi.im> (https://www.puglisi.im/)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonPuglisi/mypks-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JasonPuglisi/mypks-api/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "moment": "^2.13.0",
+    "request": "^2.72.0"
+  },
+  "private": true
 }

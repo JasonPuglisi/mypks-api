@@ -12,6 +12,10 @@ var mypksRoot = 'http://mypks.com';
 var mypksMain = 'http://mypks.com/default.aspx';
 var mypksSession = 'ASP.NET_SessionId';
 
+app.get('/mypks-api', function(req, res) {
+  res.redirect('https://github.com/JasonPuglisi/mypks-api');
+});
+
 app.post('/mypks-api', function(req, res) {
   var session = req.body.session;
   var auth = req.body.auth;

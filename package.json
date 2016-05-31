@@ -1,6 +1,6 @@
 {
   "name": "mypks-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JSON API for Six Flags scheduling website MyPKS.",
   "author": "Jason Puglisi <jason@puglisi.im> (https://www.puglisi.im/)",
   "scripts": {

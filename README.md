@@ -7,16 +7,24 @@ manipulatable format.
 
 ## Usage
 
-Send a x-www-form-urlencoded POST request with body parameter `session` set to
-your MyPKS session ID. To obtain this ID, log into MyPKS and examine the
-browser cookie `ASP.NET_SessionId`. The value of this cookie will be your
-session ID.
+Send a `x-www-form-urlencoded` POST request to `/mypks-api` with body parameter
+`session` set to your MyPKS session ID. To obtain this ID, log into MyPKS and
+examine the browser cookie `ASP.NET_SessionId`. The value of this cookie will
+be your session ID.
 
 Note that session IDs expire after a predetermined amount of time on the server
 with no activity. This amount is 20 minutes by default, which is probably what
 MyPKS uses. If this amount of time passes without an API request, or without
 you browsing any of the MyPKS pages on your own, your session will expire. In
 this case, you'll need to log in again and get a new session ID.
+
+## Availability
+
+This service is hosted officially at `https://wagnaria.xyz/mypks-api`. You can
+send a post request to this URL using the steps above. The server will send a
+secure response. Make sure you send to `https` so your request is secure as
+well. No data is logged on the server in any way, including your session ID and
+schedule.
 
 ## Responses
 

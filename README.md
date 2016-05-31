@@ -1,21 +1,22 @@
 # MyPKS API
 
-A JSON API for Six Flags scheduling website [MyPKS](http://mypks.com/).
-
-# Warning: This doesn't work anymore
-
-Someone thought it would be a good idea to add ReCAPTCHA to the login page,
-which breaks this completely. Maybe there's some way around it, but this
-project is now defunct unless I have time to look into it more.
+MyPKS API is a JSON API for Six Flags employee scheduling website
+[MyPKS](http://mypks.com/). It uses an existing user session to bypass
+ReCAPTCHA on the login page and present schedule information in a simple,
+manipulatable format.
 
 ## Usage
 
-Send a GET request with parameters `id` (ID number) and `bd` (birthdate in format `YYMM`).
+Send a x-www-form-urlencoded POST request with body parameter `session` set to
+your MyPKS session ID. To obtain this ID, log into MyPKS and examine the
+browser cookie `ASP.NET_SessionId`. The value of this cookie will be your
+session ID.
 
-Request example: http://127.0.0.1:8080/?id=00000000&bd=0000
-
-
-GET is used over POST because it's easier, and because MyPKS login details are non-sensitive and non-changable.
+Note that session IDs expire after a predetermined amount of time on the server
+with no activity. This amount is 20 minutes by default, which is probably what
+MyPKS uses. If this amount of time passes without an API request, or without
+you browsing any of the MyPKS pages on your own, your session will expire. In
+this case, you'll need to log in again and get a new session ID.
 
 ## Responses
 
@@ -40,42 +41,15 @@ Successful login (example)
 			}
 		]
     },
-    "error": null
 }
 ```
 
-ID and birthdate neither in the form of a number
+Invalid session ID (this will still return a `200` success response)
 
 ```json
 {
 	"success": false,
-	"error": "Invalid ID and birthdate format"
+	"error": "Invalid or expired session ID, log into MyPKS to get a new one"
 }
 ```
 
-ID not in the form of a number
-
-```json
-{
-	"success": false,
-	"error": "Invalid ID format"
-}
-```
-
-Birthdate not in the form of a number
-
-```json
-{
-	"success": false,
-	"error": "Invalid birthdate format"
-}
-```
-
-Invalid login credentials
-
-```json
-{
-	"success": false,
-	"error": "Unable to authenticate"
-}
-```

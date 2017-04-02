@@ -20,11 +20,10 @@ this case, you'll need to log in again and get a new session ID.
 
 ## Availability
 
-This service is hosted officially at `https://wagnaria.xyz/mypks-api`. You can
-send a post request to this URL using the steps above. The server will send a
-secure response. Make sure you send to `https` so your request is secure as
-well. No data is logged on the server in any way, including your session ID and
-schedule.
+This service is no longer hosted officially anywhere, but it should still work
+properly with a valid MyPKS session. I have no way to test it any more,
+especially since the company seems to be adopting a new system (at least
+partially).
 
 ## Responses
 

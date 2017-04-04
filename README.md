@@ -1,11 +1,13 @@
 # MyPKS API
 
-MyPKS API is a JSON API for Six Flags employee scheduling website
-[MyPKS](http://mypks.com/). It uses an existing user session to bypass
-ReCAPTCHA on the login page and present schedule information in a simple,
-manipulatable format.
+Web API for Six Flags employee scheduling website MyPKS.
 
 ## Usage
+
+Run `npm install` to install the dependencies, then `node server.js` to start
+the web server. The web server will listen on port 3000 by default, but this
+can be changed by setting the MYPKS_PORT environment variable. It's recommended
+to run a proxy such as NGINX in front of the web server.
 
 Send a `x-www-form-urlencoded` POST request to `/mypks-api` with body parameter
 `session` set to your MyPKS session ID. To obtain this ID, log into MyPKS and
@@ -18,16 +20,21 @@ MyPKS uses. If this amount of time passes without an API request, or without
 you browsing any of the MyPKS pages on your own, your session will expire. In
 this case, you'll need to log in again and get a new session ID.
 
-## Availability
+In theory, you could set up a cron job or similar to keep the session alive,
+but the server may still kill it at some point.
 
-This service is no longer hosted officially anywhere, but it should still work
-properly with a valid MyPKS session. I have no way to test it any more,
-especially since the company seems to be adopting a new system (at least
-partially).
+## Overview
 
-## Responses
+Uses an existing user session to bypass Google's No CAPTCHA reCAPTCHA. Scrapes
+web page data and parses it into JSON format.
 
-Successful login (example)
+Note that this is no longer in development and I have no means of testing it
+anymore. Six Flags has migrated away from MyPKS, so the project remains for
+archival purposes.
+
+### Sample Responses
+
+Successful login
 
 ```json
 {
@@ -51,7 +58,7 @@ Successful login (example)
 }
 ```
 
-Invalid session ID (this will still return a `200` success response)
+Invalid session ID (this will still return a 200 success response)
 
 ```json
 {
@@ -59,4 +66,3 @@ Invalid session ID (this will still return a `200` success response)
 	"error": "Invalid or expired session ID, log into MyPKS to get a new one"
 }
 ```
-
